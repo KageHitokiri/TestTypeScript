@@ -1,10 +1,28 @@
 /**
+ * interface
+ */
+ interface baseWeapon{
+    setWeaponName(newWeaponName);
+    setDamage(newDamage);
+    setType(weaponType);
+    setValue(newValue);
+    setDescription(newDescription);
+
+    getWeaponName();
+    getDamage();
+    getType();
+    getValue();
+    getDescription();
+    getDetails();
+}
+
+/**
  * Clase(molde del Objeto)
  * Propiedades (Características)
  * Métodos (Funciones o acciones del objeto)
  */
 
-class Weapon {
+class Weapon implements baseWeapon{
     private weaponName:string;
     private damage:number;
     private type:string;
@@ -24,7 +42,7 @@ class Weapon {
         this.value=value;
         this.description=description;
     }
-
+    
     public setWeaponName(newWeaponName:string):void{
         this.weaponName=newWeaponName;
     }
@@ -56,12 +74,16 @@ class Weapon {
     public getDescription():string{
         return this.description;
     }
-
+    public getDetails():string{
+        return this.weaponName +": \nTipo: "+this.type+"\n"+
+        this.description+"\n"+
+        "Daño: "+this.damage+" Precio: "+this.value+" monedas de oro.";
+    }
 
 }
 
 var sword = new Weapon("Espada de entrenamiento",5,"Espada",5,"Espada básica para entrenar");
-var axe = new Weapon("Hacha de leñador",7,"Hacha",6);
+var axe = new Weapon("Hacha de leñador",6,"Hacha",7);
 
-console.log(sword);
-console.log(axe);
+console.log(sword.getDetails());
+console.log(axe.getDetails());
