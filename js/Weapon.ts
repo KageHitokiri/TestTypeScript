@@ -23,11 +23,11 @@
  */
 
 class Weapon implements baseWeapon{
-    private weaponName:string;
-    private damage:number;
-    private type:string;
-    private value:number;
-    private description:string;
+    protected weaponName:string;
+    protected damage:number;
+    protected type:string;
+    protected value:number;
+    protected description:string;
 
     constructor(
         weaponName:string, 
