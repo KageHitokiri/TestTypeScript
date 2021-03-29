@@ -4,7 +4,14 @@
  * Métodos (Funciones o acciones del objeto)
  */
 var Weapon = /** @class */ (function () {
-    function Weapon() {
+    function Weapon(weaponName, damage, type, value, description) {
+        if (value === void 0) { value = 0; }
+        if (description === void 0) { description = "Objeto sin descripción"; }
+        this.weaponName = weaponName;
+        this.damage = damage;
+        this.type = type;
+        this.value = value;
+        this.description = description;
     }
     Weapon.prototype.setWeaponName = function (newWeaponName) {
         this.weaponName = newWeaponName;
@@ -38,17 +45,7 @@ var Weapon = /** @class */ (function () {
     };
     return Weapon;
 }());
-var sword = new Weapon();
-sword.setWeaponName("Espada de entrenamiento");
-sword.setDamage(5);
-sword.setType("Espada");
-sword.setValue(5);
-sword.setDescription("Espada básica para entrenar");
-var axe = new Weapon();
-axe.setWeaponName("Hacha de leñador");
-axe.setDamage(7);
-axe.setType("Hacha");
-axe.setValue(6);
-axe.setDescription("Herramienta para talar");
+var sword = new Weapon("Espada de entrenamiento", 5, "Espada", 5, "Espada básica para entrenar");
+var axe = new Weapon("Hacha de leñador", 7, "Hacha", 6);
 console.log(sword);
 console.log(axe);

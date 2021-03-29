@@ -11,6 +11,20 @@ class Weapon {
     private value:number;
     private description:string;
 
+    constructor(
+        weaponName:string, 
+        damage:number, 
+        type:string,
+        value:number = 0, 
+        description:string="Objeto sin descripción"
+        ){
+        this.weaponName=weaponName;
+        this.damage=damage;
+        this.type=type;
+        this.value=value;
+        this.description=description;
+    }
+
     public setWeaponName(newWeaponName:string):void{
         this.weaponName=newWeaponName;
     }
@@ -46,19 +60,8 @@ class Weapon {
 
 }
 
-var sword = new Weapon();
-sword.setWeaponName("Espada de entrenamiento");
-sword.setDamage(5);
-sword.setType("Espada");
-sword.setValue(5);
-sword.setDescription("Espada básica para entrenar");
-
-var axe = new Weapon();
-axe.setWeaponName("Hacha de leñador");
-axe.setDamage(7);
-axe.setType("Hacha");
-axe.setValue(6);
-axe.setDescription("Herramienta para talar");
+var sword = new Weapon("Espada de entrenamiento",5,"Espada",5,"Espada básica para entrenar");
+var axe = new Weapon("Hacha de leñador",7,"Hacha",6);
 
 console.log(sword);
 console.log(axe);
